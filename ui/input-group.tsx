@@ -8,10 +8,19 @@ import { FormDescription } from "./form";
 
 const InputGroup = React.forwardRef<HTMLInputElement, InputProps & CustomProps>(
   ({ name, onChange, onBlur, isLoading, label, hint, ...props }, ref) => {
+    const methods = useFormContext();
+
+    if (!methods) {
+      console.error(
+        "Form context is null. Ensure InputGroup is inside a FormProvider."
+      );
+      return null;
+    }
+
     const {
       register,
       formState: { errors },
-    } = useFormContext();
+    } = methods;
 
     return isLoading ? (
       <Skeleton className="h-10" />
@@ -44,4 +53,4 @@ const InputGroup = React.forwardRef<HTMLInputElement, InputProps & CustomProps>(
 
 InputGroup.displayName = "InputGroup";
 
-export default InputGroup;
+export { InputGroup };

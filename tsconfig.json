@@ -1,14 +1,15 @@
 {
   "compilerOptions": {
-    "outDir": "dist", // Diretório de saída
-    "module": "ESNext", // Módulos ES
-    "target": "ES6", // Alvo ES6
-    "jsx": "react", // Se estiver usando React
-    "declaration": true, // Gerar arquivos .d.ts
-    "strict": true, // Ativar modo estrito
-    "esModuleInterop": true, // Compatibilidade com módulos CommonJS
+    "outDir": "dist",
+    "module": "ESNext",
+    "target": "ES6",
+    "jsx": "react",
+    "declaration": true,
+    "strict": true,
+    "esModuleInterop": true,
+    "moduleResolution": "node",
     "skipLibCheck": true
   },
-  "include": ["src/**/*"], // Incluir arquivos TypeScript
-  "exclude": ["node_modules", "dist"] // Excluir pastas
+  "include": ["src/**/*", "ui", "index.ts", "lib"],
+  "exclude": ["node_modules", "dist"]
 }
