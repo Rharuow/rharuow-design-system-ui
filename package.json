@@ -2,8 +2,15 @@
   "name": "@rharuow-ds/ui",
   "version": "0.0.1",
   "description": "This is the unit interfaces to create the rahruow design system",
-  "main": "index.ts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "license": "MIT",
+  "scripts": {
+    "build": "tsc"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Rharuow/rharuow-design-system-ui.git"
