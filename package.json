@@ -1,8 +1,8 @@
 {
   "name": "@rharuow-ds/ui",
-  "version": "0.0.17",
+  "version": "0.0.18",
   "description": "This is the unit interfaces to create the rahruow design system",
-  "main": "index.ts",
+  "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
     "dist"
@@ -20,18 +20,6 @@
     "design",
     "system"
   ],
-  "dependencies": {
-    "class-variance-authority": "^0.7.0",
-    "clsx": "^2.1.1",
-    "cmdk": "1.0.0",
-    "date-fns": "^3.6.0",
-    "embla-carousel-react": "^8.1.3",
-    "lucide-react": "^0.426.0",
-    "react-day-picker": "8.10.1",
-    "tailwind-merge": "^2.4.0",
-    "tailwindcss-animate": "^1.0.7",
-    "vaul": "^1.1.1"
-  },
   "peerDependencies": {
     "react": "^18",
     "react-dom": "^18",
@@ -52,7 +40,17 @@
     "@radix-ui/react-toast": "^1.1.5",
     "@radix-ui/react-toggle": "^1.1.0",
     "@radix-ui/react-toggle-group": "^1.1.0",
-    "@radix-ui/react-tooltip": "^1.0.7"
+    "@radix-ui/react-tooltip": "^1.0.7",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.1.1",
+    "cmdk": "1.0.0",
+    "date-fns": "^3.6.0",
+    "embla-carousel-react": "^8.1.3",
+    "lucide-react": "^0.426.0",
+    "react-day-picker": "8.10.1",
+    "tailwind-merge": "^2.4.0",
+    "tailwindcss-animate": "^1.0.7",
+    "vaul": "^1.1.1"
   },
   "devDependencies": {
     "@types/node": "^22.13.4",
