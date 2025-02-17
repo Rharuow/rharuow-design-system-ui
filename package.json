@@ -1,6 +1,6 @@
 {
   "name": "@rharuow-ds/ui",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "This is the unit interfaces to create the rahruow design system",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
