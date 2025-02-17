@@ -15,4 +15,4 @@ declare const AsyncSelectGroup: ({ name, label, options, handleOnFocusField, han
     handleOnFocusField?: () => void;
     className?: string;
 }) => React.JSX.Element;
-export default AsyncSelectGroup;
+export { AsyncSelectGroup };

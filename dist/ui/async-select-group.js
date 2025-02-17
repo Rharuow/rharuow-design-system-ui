@@ -24,4 +24,4 @@ const AsyncSelectGroup = ({ name, label, options, handleOnFocusField, handleSele
             React.createElement("span", null, option.label))))),
         errors && errors[String(name)] && (React.createElement("span", { className: "text-xs text-red-700 font-bold" }, String((_a = errors[String(name)]) === null || _a === void 0 ? void 0 : _a.message)))));
 };
-export default AsyncSelectGroup;
+export { AsyncSelectGroup };

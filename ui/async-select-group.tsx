@@ -81,4 +81,4 @@ const AsyncSelectGroup = ({
   );
 };
 
-export default AsyncSelectGroup;
+export { AsyncSelectGroup };
