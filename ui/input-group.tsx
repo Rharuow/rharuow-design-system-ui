@@ -8,19 +8,27 @@ import { FormDescription } from "./form";
 
 const InputGroup = React.forwardRef<HTMLInputElement, InputProps & CustomProps>(
   ({ name, onChange, onBlur, isLoading, label, hint, ...props }, ref) => {
+    if (!name) {
+      throw new Error("The 'name' prop is required for InputGroup.");
+    }
+
     const methods = useFormContext();
 
     if (!methods) {
-      console.error(
-        "Form context is null. Ensure InputGroup is inside a FormProvider."
+      throw new Error(
+        "InputGroup must be used within a FormProvider from react-hook-form."
       );
-      return null;
     }
 
     const {
       register,
       formState: { errors },
     } = methods;
+
+    const { ref: registerRef, ...registerProps } = register(String(name), {
+      onChange,
+      onBlur,
+    });
 
     return isLoading ? (
       <Skeleton className="h-10" />
@@ -32,15 +40,21 @@ const InputGroup = React.forwardRef<HTMLInputElement, InputProps & CustomProps>(
             "border border-red-700": errors && errors[String(name)],
             "py-1": hint,
           })}
-          {...props}
-          {...register(String(name), {
-            ...(onChange && { onChange }),
-            ...(onBlur && { onBlur }),
-          })}
+          {...registerProps}
+          ref={(e) => {
+            registerRef(e);
+            if (ref) {
+              if (typeof ref === "function") {
+                ref(e);
+              } else {
+                ref.current = e;
+              }
+            }
+          }}
         />
         {errors && errors[String(name)] && (
           <span className="text-xs text-red-700 font-bold">
-            {String(errors[String(name)]?.message)}
+            {String(errors[String(name)]?.message || "")}
           </span>
         )}
         {hint && Object.keys(errors).length === 0 && (
