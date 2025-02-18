@@ -3,7 +3,6 @@
   "version": "0.0.19-5",
   "description": "This is the unit interfaces to create the rahruow design system",
   "main": "index.ts",
-  "types": "dist/index.d.ts",
   "files": [
     "dist"
   ],
