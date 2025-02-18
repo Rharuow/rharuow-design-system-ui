@@ -18,18 +18,34 @@ import { FormDescription } from "./form";
 const InputGroup = React.forwardRef((_a, ref) => {
     var _b;
     var { name, onChange, onBlur, isLoading, label, hint } = _a, props = __rest(_a, ["name", "onChange", "onBlur", "isLoading", "label", "hint"]);
+    if (!name) {
+        throw new Error("The 'name' prop is required for InputGroup.");
+    }
     const methods = useFormContext();
     if (!methods) {
-        console.error("Form context is null. Ensure InputGroup is inside a FormProvider.");
-        return null;
+        throw new Error("InputGroup must be used within a FormProvider from react-hook-form.");
     }
     const { register, formState: { errors }, } = methods;
+    const _c = register(String(name), {
+        onChange,
+        onBlur,
+    }), { ref: registerRef } = _c, registerProps = __rest(_c, ["ref"]);
     return isLoading ? (React.createElement(Skeleton, { className: "h-10" })) : (React.createElement("div", { className: "flex flex-col" },
         React.createElement(Input, Object.assign({ label: label, className: cn({
                 "border border-red-700": errors && errors[String(name)],
                 "py-1": hint,
-            }) }, props, register(String(name), Object.assign(Object.assign({}, (onChange && { onChange })), (onBlur && { onBlur }))))),
-        errors && errors[String(name)] && (React.createElement("span", { className: "text-xs text-red-700 font-bold" }, String((_b = errors[String(name)]) === null || _b === void 0 ? void 0 : _b.message))),
+            }) }, registerProps, { ref: (e) => {
+                registerRef(e);
+                if (ref) {
+                    if (typeof ref === "function") {
+                        ref(e);
+                    }
+                    else {
+                        ref.current = e;
+                    }
+                }
+            } })),
+        errors && errors[String(name)] && (React.createElement("span", { className: "text-xs text-red-700 font-bold" }, String(((_b = errors[String(name)]) === null || _b === void 0 ? void 0 : _b.message) || ""))),
         hint && Object.keys(errors).length === 0 && (React.createElement(FormDescription, { className: "text-xs" }, hint))));
 });
 InputGroup.displayName = "InputGroup";
