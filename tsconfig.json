@@ -1,11 +1,13 @@
 {
   "compilerOptions": {
-    "moduleResolution": "node",
-    "resolveJsonModule": true,
+    "outDir": "dist",
+    "declaration": true,
+    "declarationDir": "dist",
+    "module": "ESNext",
+    "target": "ES6",
+    "jsx": "react",
     "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
-    "jsx": "react-jsx",
-    "baseUrl": "./src"
+    "moduleResolution": "node"
   },
-  "include": ["src"]
+  "exclude": ["node_modules", "dist"]
 }
