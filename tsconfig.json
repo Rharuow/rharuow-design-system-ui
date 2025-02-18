@@ -1,14 +1,15 @@
 {
   "compilerOptions": {
-    "outDir": "dist", // Diretório de saída
-    "module": "ESNext", // Módulos ES
-    "target": "ES6", // Alvo ES6
-    "jsx": "react", // Suporte a JSX
-    "declaration": true, // Gerar arquivos .d.ts
-    "strict": true, // Ativar modo estrito
-    "esModuleInterop": true, // Compatibilidade com módulos CommonJS
+    "outDir": "dist",
+    "module": "ESNext",
+    "target": "ES6",
+    "jsx": "react",
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "strict": true,
+    "esModuleInterop": true,
     "skipLibCheck": true,
     "moduleResolution": "node"
   },
-  "exclude": ["node_modules", "dist"] // Excluir pastas
+  "exclude": ["node_modules", "dist"]
 }
