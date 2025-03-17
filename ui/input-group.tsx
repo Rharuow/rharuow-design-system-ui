@@ -51,6 +51,7 @@ const InputGroup = React.forwardRef<HTMLInputElement, InputProps & CustomProps>(
               }
             }
           }}
+          {...props}
         />
         {errors && errors[String(name)] && (
           <span className="text-xs text-red-700 font-bold">
