@@ -1,14 +1,14 @@
 import * as React from "react";
 import * as LabelPrimitive from "@radix-ui/react-label";
-import { ControllerProps, FieldPath, FieldValues } from "react-hook-form";
-declare const Form: <TFieldValues extends FieldValues, TContext = any, TTransformedValues extends FieldValues | undefined = undefined>(props: import("react-hook-form").FormProviderProps<TFieldValues, TContext, TTransformedValues>) => React.JSX.Element;
+import { ControllerProps, FieldPath, FieldValues } from "@rharuow-ds/core";
+declare const Form: <TFieldValues extends FieldValues, TContext = any, TTransformedValues extends FieldValues | undefined = undefined>(props: import("@rharuow-ds/core").FormProviderProps<TFieldValues, TContext, TTransformedValues>) => React.JSX.Element;
 declare const FormField: <TFieldValues extends FieldValues = FieldValues, TName extends FieldPath<TFieldValues> = FieldPath<TFieldValues>>({ ...props }: ControllerProps<TFieldValues, TName>) => React.JSX.Element;
 declare const useFormField: () => {
     invalid: boolean;
     isDirty: boolean;
     isTouched: boolean;
     isValidating: boolean;
-    error?: import("react-hook-form").FieldError;
+    error?: import("@rharuow-ds/core").FieldError;
     id: string;
     name: string;
     formItemId: string;

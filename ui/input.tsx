@@ -1,7 +1,7 @@
 import * as React from "react";
 
 import { cn } from "../lib/utils";
-import { useFormContext, useWatch } from "react-hook-form";
+import { useFormContext, useWatch } from "@rharuow-ds/core";
 
 export interface InputProps
   extends React.InputHTMLAttributes<HTMLInputElement> {}
@@ -36,7 +36,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps & CustomProps>(
   ) => {
     const [focused, setFocused] = React.useState(false);
 
-    const { control, watch } = useFormContext();
+    const { control } = useFormContext();
 
     const valueWatch = useWatch({ control, name: String(props.name) });
 

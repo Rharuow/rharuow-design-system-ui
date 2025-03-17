@@ -12,7 +12,7 @@ var __rest = (this && this.__rest) || function (s, e) {
 };
 import * as React from "react";
 import { Slot } from "@radix-ui/react-slot";
-import { Controller, FormProvider, useFormContext, } from "react-hook-form";
+import { Controller, FormProvider, useFormContext, } from "@rharuow-ds/core";
 import { cn } from "../lib/utils";
 import { Label } from "./label";
 const Form = FormProvider;

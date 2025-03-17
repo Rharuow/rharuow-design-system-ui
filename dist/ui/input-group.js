@@ -10,7 +10,7 @@ var __rest = (this && this.__rest) || function (s, e) {
     return t;
 };
 import React from "react";
-import { useFormContext } from "react-hook-form";
+import { useFormContext } from "@rharuow-ds/core";
 import { Input } from "./input";
 import { cn } from "../lib/utils";
 import { Skeleton } from "./skeleton";
@@ -23,7 +23,7 @@ const InputGroup = React.forwardRef((_a, ref) => {
     }
     const methods = useFormContext();
     if (!methods) {
-        throw new Error("InputGroup must be used within a FormProvider from react-hook-form.");
+        throw new Error("InputGroup must be used within a FormProvider from @rharuow-ds/core.");
     }
     const { register, formState: { errors }, } = methods;
     const _c = register(String(name), {

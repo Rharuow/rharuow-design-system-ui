@@ -1,5 +1,5 @@
 import React from "react";
-import { useFormContext } from "react-hook-form";
+import { useFormContext } from "@rharuow-ds/core";
 
 import { CustomProps, Input, InputProps } from "./input";
 import { cn } from "../lib/utils";
@@ -16,7 +16,7 @@ const InputGroup = React.forwardRef<HTMLInputElement, InputProps & CustomProps>(
 
     if (!methods) {
       throw new Error(
-        "InputGroup must be used within a FormProvider from react-hook-form."
+        "InputGroup must be used within a FormProvider from @rharuow-ds/core."
       );
     }
 

@@ -11,11 +11,11 @@ var __rest = (this && this.__rest) || function (s, e) {
 };
 import * as React from "react";
 import { cn } from "../lib/utils";
-import { useFormContext, useWatch } from "react-hook-form";
+import { useFormContext, useWatch } from "@rharuow-ds/core";
 const Input = React.forwardRef((_a, ref) => {
     var { className, type, label, onFocus, onBlur, Icon, iconClassName, iconAction, containerClassName } = _a, props = __rest(_a, ["className", "type", "label", "onFocus", "onBlur", "Icon", "iconClassName", "iconAction", "containerClassName"]);
     const [focused, setFocused] = React.useState(false);
-    const { control, watch } = useFormContext();
+    const { control } = useFormContext();
     const valueWatch = useWatch({ control, name: String(props.name) });
     return (React.createElement("div", { className: cn("relative", containerClassName) },
         React.createElement("input", Object.assign({ id: props.id || props.name, type: type, className: cn("flex h-10 w-full border z-10 border-input rounded-full text-white bg-transparent px-3 py-2 text-sm file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none disabled:cursor-not-allowed disabled:opacity-50", className), onFocus: (event) => {

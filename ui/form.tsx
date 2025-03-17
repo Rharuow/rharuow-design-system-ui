@@ -9,7 +9,7 @@ import {
   FieldValues,
   FormProvider,
   useFormContext,
-} from "react-hook-form";
+} from "@rharuow-ds/core";
 
 import { cn } from "../lib/utils";
 import { Label } from "./label";

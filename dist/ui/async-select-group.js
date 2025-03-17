@@ -1,5 +1,5 @@
 import React from "react";
-import { useFormContext } from "react-hook-form";
+import { useFormContext } from "@rharuow-ds/core";
 import { cn } from "../lib/utils";
 import { Skeleton } from "./skeleton";
 import { Input } from "./input";
