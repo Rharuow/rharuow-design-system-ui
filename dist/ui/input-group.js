@@ -44,7 +44,7 @@ const InputGroup = React.forwardRef((_a, ref) => {
                         ref.current = e;
                     }
                 }
-            } })),
+            } }, props)),
         errors && errors[String(name)] && (React.createElement("span", { className: "text-xs text-red-700 font-bold" }, String(((_b = errors[String(name)]) === null || _b === void 0 ? void 0 : _b.message) || ""))),
         hint && Object.keys(errors).length === 0 && (React.createElement(FormDescription, { className: "text-xs" }, hint))));
 });
